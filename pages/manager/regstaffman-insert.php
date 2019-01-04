@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Register_Staff</title>
+		<title>Register Staff</title>
 	</head>
 	<body>
 		 
@@ -57,7 +57,6 @@
                }
                 
         ?>
-
 	</body>
 </html>
 

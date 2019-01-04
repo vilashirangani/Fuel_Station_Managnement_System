@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>purchase-owner</title>
+    <title>Staff Register</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -37,7 +37,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <?php include 'include/headerowner.php'?>
+    <?php include 'include/headermanager.php'?>
 
 </head>
 
@@ -45,7 +45,7 @@
 
     <div id="wrapper">
 
-        
+       
         <div id="page-wrapper">
             <div class="row">
                 
@@ -56,16 +56,18 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Report For Purchase
-                        </div>
+                          Salery Details
                         <!-- /.panel-heading -->
                         <div class=panelbody>
   <form width=70% action="/action_page.php">
-   
-       <label for="fid">Date</label><br>
+    
+      <label for="fid">Employee NIC</label><br>
+    <input type="text" id="fname" name="firstname" placeholder="Enter Employee NIC.."><br>
+    
+    <label for="fid">Date</label><br>
     <input type="date" id="fname" name="firstname" placeholder="Enter Date.."><br>
       
-          
+    
   <center>
     <input type="submit" value="Submit"></center>
   </form>

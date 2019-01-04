@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>purchase-owner</title>
+    <title>Daily Cash from shift</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -24,7 +24,7 @@
     <link href="../../vendor/morrisjs/morris.css" rel="stylesheet">
 
      <link href="../style.css" rel="stylesheet">
-     <link href="footer.css" rel="stylesheet">
+     <link href="../footer.css" rel="stylesheet">
 
 
     <!-- Custom Fonts -->
@@ -37,15 +37,16 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <?php include 'include/headerowner.php'?>
+    <?php include 'include/headercashier.php'?>
 
 </head>
 
-<body background="back-ground.jpg.jpg">
+<body>
 
     <div id="wrapper">
 
-        
+       
+
         <div id="page-wrapper">
             <div class="row">
                 
@@ -56,16 +57,22 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Report For Purchase
+                          Daily Cash From Shifts
                         </div>
                         <!-- /.panel-heading -->
                         <div class=panelbody>
   <form width=70% action="/action_page.php">
-   
-       <label for="fid">Date</label><br>
-    <input type="date" id="fname" name="firstname" placeholder="Enter Date.."><br>
-      
-          
+    <label for="fid">Date</label><br>
+    <input type="text" id="fname" name="firstname" placeholder="Enter Date.."><br>
+
+    <label for="ftype">Amount to be received</label><br>
+    <input type="text" id="lname" name="lastname" placeholder=" "><br>
+
+
+    <label for="uprice">cash received</label><br>
+    <input type="text" id="lname" name="lastname" placeholder="Enter cash receeived.."><br>
+
+    
   <center>
     <input type="submit" value="Submit"></center>
   </form>
@@ -92,7 +99,7 @@
     <script src="../../vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="../../vendor/metisMenu/metisMenu.min.js"></script>

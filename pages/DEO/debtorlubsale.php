@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Daily_Cash_From_Shift</title>
+    <title>Dabtor Lubricant Sales </title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -24,7 +24,7 @@
     <link href="../../vendor/morrisjs/morris.css" rel="stylesheet">
 
      <link href="../style.css" rel="stylesheet">
-     <link href="../footer.css" rel="stylesheet">
+     <link href="footer.css" rel="stylesheet">
 
 
     <!-- Custom Fonts -->
@@ -37,18 +37,24 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <?php include 'include/headercashier.php'?>
+
+    <?php include 'include/headerdeo.php'?>
+
+
 </head>
 
 <body>
 
     <div id="wrapper">
 
+        
        
 
         <div id="page-wrapper">
             <div class="row">
-                
+                <div class="col-lg-12">
+                    <h1 class="page-header">Data entry Operator</h1>
+                </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
@@ -56,22 +62,70 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                          Daily Cash From Shifts
+                            Debtor Lubricant Sale
                         </div>
                         <!-- /.panel-heading -->
                         <div class=panelbody>
+  <form width=70% action="debtorlubsale-insert.php" method="post">
+    <label for="fid">Debtor ID</label><br>
+   <select name="debtorid">
+    <?php
 
-                            
-  <form width=70% action="/action_page.php">
-    <label for="fid">Date</label><br>
-    <input type="Date" id="date" name="date" placeholder="Enter Date.." required><br>
+    include "../../dbConnect/dbConnect.php";
+    $count=0;
+    $conn=dbConnect();
 
-    <label for="ftype">Amount To Be Received</label><br>
-    <input type="text" id="amountto" name="amountto" placeholder="Enter the amount of cash to be received.." required><br>
+    $sql="SELECT DebtorId from Debtor";
+
+    $result=$conn->query($sql);
+
+    if($result->num_rows>0){
+    while($row=$result->fetch_assoc()){
+    $n=$row['DebtorId'];
+    echo "<option value='$n'>".$row['DebtorId']."</option>";
+
+    $count++;
+}
+}
+?>
+</select><br><br>
+   
+    <label for="fid">Lubricant ID</label><br>
+   <select name="lubricantid">
+    <?php
+
+    // include "../../dbConnect/dbConnect.php";
+    $count=0;
+    $conn=dbConnect();
+
+    $sql="SELECT LubricantId from Lubricant";
+
+    $result=$conn->query($sql);
+
+    if($result->num_rows>0){
+    while($row=$result->fetch_assoc()){
+    $n=$row['LubricantId'];
+    echo "<option value='$n'>".$row['LubricantId']."</option>";
+
+    $count++;
+}
+}
+?>
+</select><br><br>
+   
+    
+   <label for="ftype">Amount</label><br>
+    <input type="text" id="amount" name="amount" placeholder="Enter Amount.."><br>
+   
+
+    <label for="ftype">Date</label><br>
+    <input type="date" id="date" name="date" placeholder="Enter Date.."><br>
+
+    
 
 
-    <label for="uprice">Cash received</label><br>
-    <input type="text" id="cash" name="cash" placeholder="Enter cash received.." required><br>
+    <label for="uprice">Time</label><br>
+    <input type="time" id="time" name="time" placeholder="Enter Time.."><br>
 
     
   <center>
@@ -100,7 +154,7 @@
     <script src="../../vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../../vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="../../vendor/metisMenu/metisMenu.min.js"></script>

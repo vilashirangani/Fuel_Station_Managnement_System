@@ -59,7 +59,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                        
-
+                            <img src="index.jpg" height="500px" width="1035px">
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->

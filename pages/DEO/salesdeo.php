@@ -63,44 +63,38 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class=panelbody>
+
   <form width=70% action="sales-insert.php" method="post">
     <label for="fid">Pump ID</label><br>
-    <input type="text" id="pumpid" name="pumpid" placeholder="Enter Pump ID.."><br>
+    <input type="text" id="pumpid" name="pumpid" placeholder="Enter Pump ID.." required><br>
 
      <label for="fid">Pumper ID</label><br>
-    <input type="text" id="pumperid" name="pumperid" placeholder="Enter pumper ID.."><br>
+    <input type="text" id="pumperid" name="pumperid" placeholder="Enter pumper ID.." required><br>
 
     <label for="fid">Fuel ID</label><br>
-    <input type="text" id="fuelid" name="fuelid" placeholder="Enter fuel ID.."><br>
-
-   <!--  <label for="ftype">Opening Meter Reading</label><br>
-    <input type="text" id="lname" name="lastname" placeholder="Enter Opening Meter Readings.."><br>
- -->
+    <input type="text" id="fuelid" name="fuelid" placeholder="Enter fuel ID.." required><br>
 
     <label for="fid">Opening Meater Readings</label><br>
-    <input type="text" id="openingreading" name="openingreading" placeholder="Enter opening Meter Readings.."><br> 
+    <input type="text" id="openingreading" name="openingreading" placeholder="Enter opening Meter Readings.." required><br> 
 
      <label for="fid">Closing Meater Readings</label><br>
-    <input type="text" id="cmreading" name="cmreading" placeholder="Enter closing Meter Readings.."><br>
+    <input type="text" id="cmreading" name="cmreading" placeholder="Enter closing Meter Readings.." required><br>
 
 
     <label for="uprice">Starting Time</label><br>
-    <input type="time" id="stime" name="stime" placeholder="Enter Starting Time.."><br>
+    <input type="time" id="stime" name="stime" placeholder="Enter Starting Time.." required><br>
 
     <label for="uprice">Ending Time</label><br>
-    <input type="time" id="etime" name="etime" placeholder="Enter Ending Time.."><br>
+    <input type="time" id="etime" name="etime" placeholder="Enter Ending Time.." required><br>
 
     <label for="uprice">Date</label><br>
-    <input type="date" id="date" name="date" placeholder="Enter Date.."><br>
+    <input type="date" id="date" name="date" placeholder="Enter Date.." required><br>
 
      <label for="uprice">Debtor Sales</label><br>
-    <input type="text" id="debtorsales" name="debtorsales" placeholder="Enter Debtor Sales.."><br>
+    <input type="text" id="debtorsales" name="debtorsales" placeholder="Enter Debtor Sales.." ><br>
 
      <label for="uprice">Credit Card Sales</label><br>
-    <input type="text" id="cardsales" name="cardsales" placeholder="Enter Credit Card Sales.."><br>
-
-    <label for="uprice">Shortages</label><br>
-    <input type="text" id="short" name="short" placeholder="Enter Shortages.."><br>
+    <input type="text" id="cardsales" name="cardsales" placeholder="Enter Credit Card Sales.." ><br>
 
     
   <center>

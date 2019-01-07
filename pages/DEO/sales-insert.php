@@ -24,8 +24,9 @@
 			$Date=$_POST['date'];
 			$DebtorSales=$_POST['debtorsales'];
 			$Cardsales=$_POST['cardsales'];
-			$Short=$_POST['short'];
+			
 			$TotAmnt = 0;
+			$ToBeRec = 0;
 			
 			$sql = "SELECT UnitPrice FROM fuelprice WHERE 	(FuelId = '$FuelId' AND UnitPricedDate = '$Date') ";
 			$result = $conn->query($sql);
@@ -34,11 +35,12 @@
 
 			if ($result->num_rows > 0) {
     			// output data of each row
-    			while($row = $result->fetch_assoc()) {
+    			while($row = $result->fetch_assoc()) 
         			$TotAmnt = ($CMreading - $OpenReading - $Short) * $row["UnitPrice"] ;
     			}
+    			$ToBeRec = $TotAmnt - $DebtorSales - $Cardsales;
 
-    			$sql="INSERT INTO FuelSale(PumpId,PumperId,OMReading,CMReading,Stime,Etime,Date,DebtorSales,CardSales,Shortages,TotalAmount) VALUES ('$PumpId','$PumperId','$OpenReading','$CMreading','$Stime','$Etime','$Date','$DebtorSales','$Cardsales','$Short','$TotAmnt')";
+    			$sql="INSERT INTO FuelSale(PumpId,PumperId,OMReading,CMReading,Stime,Etime,Date,DebtorSales,CardSales,TotalAmount,ToBeRecieved) VALUES ('$PumpId','$PumperId','$OpenReading','$CMreading','$Stime','$Etime','$Date','$DebtorSales','$Cardsales','$TotAmnt','$ToBeRec')";
 			
 			
 				if ($conn->query($sql) === TRUE) {
@@ -56,7 +58,7 @@
 			
 				$conn -> close();
 
-		}
+		
 	?>
 
 		 <?php

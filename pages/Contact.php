@@ -17,6 +17,9 @@
     <!-- MetisMenu CSS -->
     <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/table.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
 
@@ -76,7 +79,7 @@
                     <ul class="nav" id="side-menu">
                         
                         <li>
-                            <a href="Contact.php"><i class="fa fa-edit fa-fw"></i> Contact Details</a>
+                            <a href="#"><i class="fa fa-edit fa-fw"></i> Contact Details</a>
                             
                         </li>
                         <li>
@@ -98,7 +101,42 @@
             
             <div class="row">
                 <div class="col-lg-8">
-                   <img src="index.jpg" height="500px" width="1035px">
+                    <h2>Contact Persons</h2>
+
+                            <table class="blueTable">
+                              <tr>
+                                <th>Position</th>
+                                <th>Name</th>
+                                <th>Contact Number</th>
+                                <th>Email Address</th>
+                              </tr>
+                            <tr>
+                                <td>Owner</td>
+                                <td>S.V.R.Dharmasiri</td>
+                                <td>0710354064</td>
+                                <td>vila@gmail.com</td>
+                              </tr>
+                              <tr>
+                                <td>Manager</td>
+                                <td>Anjalee Devindi</td>
+                                <td>0719867543</td>
+                                <td>anju@gmail.com</td>
+                              </tr>
+                              <tr>
+                                <td>Cashier</td>
+                                <td>Kanishka Chamara</td>
+                                <td>0987645345</td>
+                                <td>kani@gmail.com</td>
+                              </tr>
+                              <tr>
+                                <td>Data Entry Operator</td>
+                                <td>Kithmi Ranaweera</td>
+                                <td>0987896345</td>
+                                <td>kithmi@gmail.com</td>
+                              </tr>
+                            </table><br><br>
+
+
                 </div>
                 <!-- /.col-lg-8 -->
                 <!-- <div class="col-lg-4">

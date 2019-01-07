@@ -24,7 +24,6 @@
     <link href="../../vendor/morrisjs/morris.css" rel="stylesheet">
 
      <link href="../style.css" rel="stylesheet">
-     <link href="footer.css" rel="stylesheet">
 
 
     <!-- Custom Fonts -->
@@ -77,18 +76,23 @@
 
   <form width=70% action="lubsales-insert.php" method="post">
     <label for="fid">Lubricant ID</label><br>
-    <input type="text" id="lubid" name="lubid" placeholder="Enter Lubricant ID.."><br>
+    <input type="text" id="lubid" name="lubid" placeholder="Enter Lubricant ID.." required><br>
 
      <label for="fid">Date</label><br>
-    <input type="Date" id="date" name="date" placeholder="Enter Date.."><br>
+    <input type="Date" id="date" name="date" placeholder="Enter Date.." required><br>
 
   
-     <label for="fid">Time</label><br>
-    <input type="time" id="time" name="time" placeholder="Enter time.."><br>
+     <label for="fid">CashSale</label><br>
+    <input type="text" id="cashsale" name="cashsale" placeholder="Enter Cash Sales.." ><br>
 
+    <label for="fid">DebtorSale</label><br>
+    <input type="text" id="debtsale" name="debtsale" placeholder="Enter Debtor Sales.." ><br>
+
+    <label for="fid">CardSale</label><br>
+    <input type="text" id="cardtsale" name="cardsale" placeholder="Enter Credit Card Sales.." ><br>
 
     <label for="uprice">No Of Items</label><br>
-    <input type="text" id="noi" name="noi" placeholder="Enter No of Items.."><br>
+    <input type="text" id="noi" name="noi" placeholder="Enter No of Items.." required><br>
 
     
     

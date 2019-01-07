@@ -14,14 +14,16 @@
 			include "../../dbConnect/dbConnect.php";
 			$conn = dbConnect();
 			
-			$LubId=$_POST['lubid'];
+			$LubricantId=$_POST['lubid'];
 			$Date=$_POST['date'];
-			$Time=$_POST['time'];
+			$Cashsale=$_POST['cashsale'];
+			$Debtorsale=$_POST['debtsale'];
+			$Cardsale=$_POST['cardsale'];
 			$NOIe=$_POST['noi'];
 			$TotAmnt = 0;
 			echo "$Date";
 
-			$sql = "SELECT UnitPrice FROM lubricantprice WHERE (LubricantId = '$LubId' AND UnitPricedDate = '$Date') ";
+			$sql = "SELECT UnitPrice FROM lubricantprice WHERE (LubricantId = '$LubricantId' AND UnitPricedDate = '$Date') ";
 			$result = $conn->query($sql);
 
 			if ($result->num_rows > 0) {
@@ -30,10 +32,10 @@
     			while($row = $result->fetch_assoc()) {
     				$Price = $row["UnitPrice"];
     				echo "$Price";
-        			$TotAmnt = $row["UnitPrice"] * $NOIe;
+        			$TotAmnt = ($row["UnitPrice"] * $NOIe) - ($Debtorsale + $Cardsale);
     			}
 
-    			$sql="INSERT INTO Lubricantsale(LubricantId,Date,Time,NoOfItems,TotalAmount) VALUES ('$LubId','$Date','$Time','$NOIe','$TotAmnt')";
+    			$sql="INSERT INTO Lubricantsale(LubricantId,Date,Cashsale,Debtorsale,Cardsale,NoOfItems,TotalAmount) VALUES ('$LubricantId','$Date','$Cashsale','$Debtorsale','$Cardsale','$NOIe','$TotAmnt')";
 			
 			
 				if ($conn->query($sql) === TRUE) {

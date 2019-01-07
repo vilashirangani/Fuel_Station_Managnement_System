@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Lubricant_Sales</title>
+    <title>Salary Advance</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -35,23 +35,12 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-     <?php include 'include/headerdeo.php'?>
     
-<?php 
-
-// if(isset($_SESSION['Type']))
-// {
-//     if(!strcmp($_SESSION['Type'],"Manager")) {
-//         echo "<script>window.alert('You are not autherized to view this page !');
-//                 window.location='../index.php'</script>";
-//     }
-// }
-
-?>
+    <?php include 'include/headercashier.php'?>
 
 </head>
 
-<body background="back-ground.jpg.jpg">
+<body>
 
     <div id="wrapper">
 
@@ -60,7 +49,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Data entry Operator</h1>
+                    <h1 class="page-header">Cashier</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -68,66 +57,72 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Lubricant Sales
+                       <div class="panel-heading">
+                            Salary Advance
                         </div>
-                        <!-- /.panel-heading -->
-                        <div class=panelbody>
+                             <div class=panelbody>
 
-  <form width=70% action="lubsales-insert.php" method="post">
-    <label for="fid">Lubricant ID</label><br>
-    <select name="lubid">
+
+
+<form width=70% action="advance-insert.php" method="POST">
+
+    <label for="fid">Employee ID</label><br>
+    <select name="empid" id="empid">
     <?php
 
     include "../../dbConnect/dbConnect.php";
     $count=0;
     $conn=dbConnect();
 
-    $sql="SELECT LubricantId from Lubricant";
+    $sql="SELECT EmpId from Employee ";
 
     $result=$conn->query($sql);
 
     if($result->num_rows>0){
     while($row=$result->fetch_assoc()){
-    $n=$row['LubricantId'];
-    echo "<option value='$n'>".$row['LubricantId']."</option>";
+    $n=$row['EmpId'];
+    echo "<option value='$n'>".$row['EmpId']."</option>";
 
     $count++;
 }
 }
+     $sql="SELECT EmpId from Pumper";
+
+    $result=$conn->query($sql);
+
+    if($result->num_rows>0){
+    while($row=$result->fetch_assoc()){
+    $n=$row['EmpId'];
+    echo "<option value='$n'>".$row['EmpId']."</option>";
+
+    $count++;
+}
+}
+$conn -> close();
 ?>
+
 </select><br>
 
     
-     <label for="fid">Date</label><br>
-    <input type="Date" id="date" name="date" placeholder="Enter Date.." required><br>
 
-  
-     <label for="fid">CashSale</label><br>
-    <input type="text" id="cashsale" name="cashsale" placeholder="Enter Cash Sales.." ><br>
+     <label for="advance">Advance</label><br>
+    <input type="text" id="advance" name="advance" ><br>
 
-    <label for="fid">DebtorSale</label><br>
-    <input type="text" id="debtsale" name="debtsale" placeholder="Enter Debtor Sales.." ><br>
 
-    <label for="fid">CardSale</label><br>
-    <input type="text" id="cardtsale" name="cardsale" placeholder="Enter Credit Card Sales.." ><br>
+    <label for="uprice">Date</label><br>
+    <input type="date" id="date" name="date" placeholder="Salary Advance Date.." required><br>
 
-    <label for="uprice">No Of Items</label><br>
-    <input type="text" id="noi" name="noi" placeholder="Enter No of Items.." required><br>
 
-    
-    
-  <center>
       
-     <!--  <a href="creditdeo.php"><button type="button" class="btn">Credit card</button></a>
-      <a href="debtordeo.php"><button type="button" class="btn">Debtor</button></a> -->
-      
-      
-    <input type="submit" value="Submit"></center>
+    <input type="submit" name="submitLA" value="Submit"></center>
   </form>
-</div>
 
-                        <!-- /.panel-body -->
+
+
+
+
+                             </div>
+                        
                     </div>
                     <!-- /.panel -->
                 </div>
@@ -163,7 +158,7 @@
     <script src="../../data/flot-data.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+    <script src="../../dist/js/sb-admin-2.js"></script>
 
     <?php include 'include/footer.php' ?>
 

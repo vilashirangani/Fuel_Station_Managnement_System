@@ -1,14 +1,10 @@
 <html>
 	<head>
-		<title>Purchase_Lub</title>
+		<title>Salary Advance</title>
 	</head>
 	<body>
 		 
-
-
-
-
-<?php
+		<?php
 		
 		
 
@@ -18,18 +14,19 @@
 			include "../../dbConnect/dbConnect.php";
 			$conn = dbConnect();
 			
-			$LubId=$_POST['lubid'];
+			$EmpId=$_POST['empid'];
+			
+			$Advance=$_POST['advance'];
 			$Date=$_POST['date'];
-			$Amount=$_POST['amount'];
-			$InvoiceNo=$_POST['invoiceNo'];
 			
 
-			$sql = "INSERT INTO lubricantpurchase(LubricantId, Date,Amount, InvoiceNo) VALUES ('$LubId', '$Date', '$Amount','$InvoiceNo')";
+
+			$sql="INSERT INTO Advance(EmpId,Advance,FromMonth) VALUES ('$EmpId','$Advance','$Date')";
 			
 			
 				if ($conn->query($sql) === TRUE) {
     			echo "<script>window.alert('Successfully added !');
-    			window.location='purlub.php'</script>";
+    			window.location='advance.php'</script>";
 
 		} else {
     			echo "Error: " . $sql . "<br>" . $conn->error;
@@ -38,5 +35,8 @@
 
 		}
 	?>
-</body>
+
+		
+	</body>
 </html>
+

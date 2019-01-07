@@ -90,9 +90,6 @@ $conn -> close();
 ?>
 </select><br>
       
-       <label for="fid">Quantity</label><br>
-    <input type="text" id="quantity" name="quantity" placeholder="Enter quantity.." required><br>
-
        <label for="fid">Amount(Rs)</label><br>
     <input type="text" id="amount" name="amount" placeholder="Enter Amount(Rs).." required><br>
 

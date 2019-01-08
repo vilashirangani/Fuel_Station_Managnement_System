@@ -100,7 +100,7 @@
                                                 $sql = "SELECT NIC, EmpId, FirstName, LastName, DOB, Address, TelephoneNo, BasicSalary, Allowances, OTRate FROM pumper ";
                                             $result = $conn->query($sql);
                                             
-                                            echo '<table class="blueTable"><tr><th>NIC</th><th>PumperId</th><th>Name</th><th>DOB</th><th>Address</th><th>TelephoneNo</th><th>BasicSalary</th><th>Allowances</th><th>OTRate</th></tr>';
+                                            echo '<table class="blueTable"><caption>Pumper Details</caption><tr><th>NIC</th><th>PumperId</th><th>Name</th><th>DOB</th><th>Address</th><th>TelephoneNo</th><th>BasicSalary</th><th>Allowances</th><th>OTRate</th></tr>';
 
                                             if ($result->num_rows > 0) {
                                                
@@ -114,7 +114,7 @@
                                                 $sql = "SELECT NIC, EmpId, FirstName, LastName, DOB, Address, TelephoneNo, Email, Type, BasicSalary, Allowances FROM employee ";
                                                 $result = $conn->query($sql);
                                             
-                                                echo '<table class="blueTable"><tr><th>NIC</th><th>Employee Id</th><th>Name</th><th>DOB</th><th>Address</th><th>TelephoneNo</th><th>Email</th><th>Emp Type</th><th>BasicSalary</th><th>Allowances</th></tr>';
+                                                echo '<table class="blueTable"><caption>Employee Details</caption><tr><th>NIC</th><th>Employee Id</th><th>Name</th><th>DOB</th><th>Address</th><th>TelephoneNo</th><th>Email</th><th>Emp Type</th><th>BasicSalary</th><th>Allowances</th></tr>';
 
                                             if ($result->num_rows > 0) {
                                                
@@ -135,7 +135,10 @@
                                                     $sql = "SELECT NIC, EmpId, FirstName, LastName, DOB, Address, TelephoneNo, BasicSalary, Allowances, OTRate FROM pumper WHERE EmpId = '$EmpId'";
                                             $result = $conn->query($sql);
                                             
-                                            echo '<table class="blueTable"><tr><th>NIC</th><th>PumperId</th><th>Name</th><th>DOB</th><th>Address</th><th>TelephoneNo</th><th>BasicSalary</th><th>Allowances</th><th>OTRate</th></tr>';
+                                            echo '<table class="blueTable"><caption>Pumper Details</caption><tr><th>NIC</th><th>PumperId</th><th>Name</th><th>DOB</th><th>Address</th><th>TelephoneNo</th><th>BasicSalary</th><th>Allowances</th><th>OTRate</th></tr>';
+                                            if (!$result) {
+                                                echo "Err:". $conn->error;
+                                            }
 
                                             if ($result->num_rows > 0) {
                                                
@@ -152,7 +155,7 @@
                                                 $result = $conn->query($sql);
                                             
 
-                                            echo '<table class="blueTable"><tr><th>NIC</th><th>Employee Id</th><th>Name</th><th>DOB</th><th>Address</th><th>TelephoneNo</th><th>Email</th><th>Emp Type</th><th>BasicSalary</th><th>Allowances</th></tr>';
+                                            echo '<table class="blueTable"><caption>Employee Details</caption><tr><th>NIC</th><th>Employee Id</th><th>Name</th><th>DOB</th><th>Address</th><th>TelephoneNo</th><th>Email</th><th>Emp Type</th><th>BasicSalary</th><th>Allowances</th></tr>';
                                             
                                             if ($result->num_rows > 0) {
                                                

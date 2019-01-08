@@ -29,7 +29,7 @@
 						 	$Type = $row['Type'];
 		               }
 
-		            // end of the query
+		        // end of the query
 		   		$conn -> close();
 		   															
 						$_SESSION['isLogged'] = True;
@@ -64,7 +64,7 @@
 		    			window.location='login.php'</script>";
 						}					
 				
-				?>
+			?>
 		</body>
 </html>
 

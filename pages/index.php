@@ -76,11 +76,11 @@
                     <ul class="nav" id="side-menu">
                         
                         <li>
-                            <a href="Contact.php"><i class="fa fa-edit fa-fw"></i> Contact Details</a>
+                            <a href="#"><i class="fa fa-edit fa-fw"></i> Contact Details</a>
                             
                         </li>
                         <li>
-                            <a href="Usermanual.php"><i class="fa fa-wrench fa-fw"></i> User manual<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i> User manual<span class="fa arrow"></span></a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Stock Levels<span class="fa arrow"></span></a>
@@ -98,7 +98,7 @@
             
             <div class="row">
                 <div class="col-lg-8">
-                   <img src="index.jpg" height="500px" width="1035px">
+                   <img src="index.jpg" height="500px" width="700px">
                 </div>
                 <!-- /.col-lg-8 -->
                 <!-- <div class="col-lg-4">

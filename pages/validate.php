@@ -1,75 +1,70 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Login</title>
-</head>
-<body>
+	<head>
+		<title>Login</title>
+	</head>
+	<body>
 		<?php
 
-		   session_start();
+			session_start();
 
 			include "../dbConnect/dbConnect.php";
 
-
-			$NIC = $_POST["nic"];
-			$password = $_POST["password"];
-			
-           
+				$NIC = $_POST["nic"];
+				$password = $_POST["password"];
+							           
 			$conn = dbConnect();
 
+			// select query from table
+				$sql = "SELECT NIC, Password,Type FROM Employee WHERE NIC = '$NIC' AND Password = '$password' ";
 
+				$result = mysqli_query($conn , $sql);
 
-			$sql = "SELECT NIC, Password,Type FROM Employee WHERE NIC = '$NIC' AND Password = '$password' ";
-
-			$result = mysqli_query($conn , $sql);
-
-			$count = mysqli_num_rows($result);
-			
-
-
-			if($count == 1){
-
-				 while($row=$result->fetch_assoc()){
-				 	$NIC = $row['NIC'];
-				 	$Type = $row['Type'];
-               }
-
-   			$conn -> close();
-   			
+				$count = mysqli_num_rows($result);
 				
-				//$_SESSION["Password"] = "$password";
-				$_SESSION['isLogged'] = True;
-				$_SESSION['Type']= $Type;
-				// echo $_SESSION["name"];
-                // echo "$Type";
-                echo "Session".$_SESSION['isLogged'];
-				if($Type == 1){
-					// echo "InDEO".$Type;
-				echo "<script>window.location='DEO/deoindex.php'</script>";
-				}
-				elseif($Type == 2){
-					// echo "InManager".$Type;
-				echo "<script>window.location='manager/managerindex.php'</script>";
-				}
-				elseif($Type == 3){
-					// echo "InCashier".$Type;
-				echo "<script>window.location='cashier/cashierindex.php'</script>";
-				}
-				elseif($Type == 4){
-					// echo "InOwner".$Type;
-				echo "<script>window.location='owner/ownerindex.php'</script>";
-				}
+					if($count == 1){
 
-				}else{
-					// echo "Invalid".$Type;
-				echo "<script>window.alert('Invalid details please try again !');
-    			window.location='login.php'</script>";
-			}
+						 while($row=$result->fetch_assoc()){
+						 	$NIC = $row['NIC'];
+						 	$Type = $row['Type'];
+		               }
 
+		            // end of the query
+		   		$conn -> close();
+		   															
+						$_SESSION['isLogged'] = True;
+						$_SESSION['Type']= $Type;
+						
+		            	echo "Session".$_SESSION['isLogged'];
 
-			
-		
-		?>
-</body>
+					if($Type == 1){
+							
+						echo "<script>window.location='DEO/deoindex.php'</script>";
+						}
+
+					elseif($Type == 2){
+							
+						echo "<script>window.location='manager/managerindex.php'</script>";
+						}
+
+					elseif($Type == 3){
+							
+						echo "<script>window.location='cashier/cashierindex.php'</script>";
+						}
+
+					elseif($Type == 4){
+							
+						echo "<script>window.location='owner/ownerindex.php'</script>";
+						}
+
+					}
+					else{
+							
+						echo "<script>window.alert('Invalid details please signin again !');
+		    			window.location='login.php'</script>";
+						}					
+				
+				?>
+		</body>
 </html>
 

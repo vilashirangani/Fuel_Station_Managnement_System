@@ -66,13 +66,36 @@
 
   <form width=70% action="sales-insert.php" method="post">
     <label for="fid">Pump ID</label><br>
-    <input type="text" id="pumpid" name="pumpid" placeholder="Enter Pump ID.." required><br>
+     <select name="pumpid">
+    <?php
 
+    include "../../dbConnect/dbConnect.php";
+    $count=0;
+    $conn=dbConnect();
+
+    $sql="SELECT PumpId from Pump";
+
+    $result=$conn->query($sql);
+
+    if($result->num_rows>0){
+    while($row=$result->fetch_assoc()){
+    $n=$row['PumpId'];
+    echo "<option value='$n'>".$row['PumpId']."</option>";
+
+    $count++;
+}
+}
+?>
+</select><br>
+    
      <label for="fid">Pumper ID</label><br>
-    <input type="text" id="pumperid" name="pumperid" placeholder="Enter pumper ID.." required><br>
-
+    <input type="text" id="pumperid" name="pumperid" placeholder="Enter Pumper id.." required><br>   
+   
     <label for="fid">Fuel ID</label><br>
-    <input type="text" id="fuelid" name="fuelid" placeholder="Enter fuel ID.." required><br>
+     <input type="text" id="fuelid" name="fuelid" placeholder="Enter Fuel 
+     id.." required><br>   
+   
+    
 
     <label for="fid">Opening Meater Readings</label><br>
     <input type="text" id="openingreading" name="openingreading" placeholder="Enter opening Meter Readings.." required><br> 

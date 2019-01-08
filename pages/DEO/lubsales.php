@@ -76,8 +76,29 @@
 
   <form width=70% action="lubsales-insert.php" method="post">
     <label for="fid">Lubricant ID</label><br>
-    <input type="text" id="lubid" name="lubid" placeholder="Enter Lubricant ID.." required><br>
+    <select name="lubid">
+    <?php
 
+    include "../../dbConnect/dbConnect.php";
+    $count=0;
+    $conn=dbConnect();
+
+    $sql="SELECT LubricantId from Lubricant";
+
+    $result=$conn->query($sql);
+
+    if($result->num_rows>0){
+    while($row=$result->fetch_assoc()){
+    $n=$row['LubricantId'];
+    echo "<option value='$n'>".$row['LubricantId']."</option>";
+
+    $count++;
+}
+}
+?>
+</select><br>
+
+    
      <label for="fid">Date</label><br>
     <input type="Date" id="date" name="date" placeholder="Enter Date.." required><br>
 

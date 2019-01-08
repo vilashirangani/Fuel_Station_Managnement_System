@@ -20,12 +20,11 @@
 			
 			$LubId=$_POST['lubid'];
 			$Date=$_POST['date'];
-			$TotalPrice=$_POST['amount'];
-			$Quantity=$_POST['quantity'];
+			$Amount=$_POST['amount'];
 			$InvoiceNo=$_POST['invoiceNo'];
 			
 
-			$sql = "INSERT INTO lubricantpurchase(LubricantId, Date, TotalPrice, Quantity, InvoiceNo) VALUES ('$LubId', '$Date', '$TotalPrice','$Quantity','$InvoiceNo')";
+			$sql = "INSERT INTO lubricantpurchase(LubricantId, Date,Amount, InvoiceNo) VALUES ('$LubId', '$Date', '$Amount','$InvoiceNo')";
 			
 			
 				if ($conn->query($sql) === TRUE) {

@@ -90,9 +90,6 @@
                                 <li>
                                     <a href="purlub.php">Lubricant Purchase</a>
                                 </li>
-                                <li>
-                                    <a href="purother.php">Other Purchase</a>
-                                </li>
                                
                             </ul>
                             <!-- /.nav-second-level -->

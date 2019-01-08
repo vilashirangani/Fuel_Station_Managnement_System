@@ -110,23 +110,23 @@
                               </tr>
                               <tr>
                                 <td>PET921</td>
-                                <td>P</td>
+                                <td>Petrol 92 OCTANE</td>
                               </tr>
                               <tr>
-                                <td></td>
-                                <td></td>
+                                <td>PET951</td>
+                                <td>Petrol 95 OCTANE</td>
                               </tr>
                               <tr>
-                                <td></td>
-                                <td></td>
+                                <td>LAD001</td>
+                                <td>Lanka Auto Diesel</td>
                               </tr>
                               <tr>
-                                <td></td>
-                                <td></td>
+                                <td>LSD001</td>
+                                <td>Lanaka Super Diesel</td>
                               </tr>
                               <tr>
-                                <td></td>
-                                <td></td>
+                                <td>KERO001</td>
+                                <td>Kerosine</td>
                               </tr>
                               <tr>
                                 <td></td>
@@ -252,15 +252,15 @@
                               </tr>
                               <tr>
                                 <td>T0001</td>
-                                <td>LAO001</td>
+                                <td>LAD001</td>
                               </tr>
                               <tr>
                                 <td>T0002</td>
-                                <td>LSO001</td>
+                                <td>LSD001</td>
                               </tr>
                               <tr>
                                 <td>TK001</td>
-                                <td>KER0001</td>
+                                <td>KERO001</td>
                               </tr>
                             </table><br><br>
 

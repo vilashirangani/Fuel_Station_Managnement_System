@@ -11,9 +11,11 @@
 
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+			//create DB connection
 			include "../../dbConnect/dbConnect.php";
 			$conn = dbConnect();
 			
+			//assign user inputs to variables.
 			$NIC=$_POST['NIC'];
 			$EmpId=$_POST['empid'];
 			$fname=$_POST['firstname'];
@@ -23,8 +25,10 @@
 			$dob=$_POST['dob'];
 			$email=$_POST['email'];
 			$type=$_POST['type'];
+			$password=$_POST['password'];
 			$IntType;
-
+            
+            //Convert string user type to integer value
 			if (strcmp($type, "DEO")){
 				$IntType = 1;
 			}elseif (strcmp($type, "Manager")) {
@@ -35,10 +39,7 @@
 				$IntType = 4;
 			}
 			
-			$password=$_POST['password'];
-			
-
-
+			// insert user data to DB
 			$sql="INSERT INTO Employee(NIC,EmpId,FirstName,LastName,TelephoneNo,Address,DOB,Email,Type,Password) VALUES ('$NIC','$EmpId','$fname','$lname','$cno','$address','$dob','$email','$IntType','$password')";
 			
 			
@@ -54,21 +55,6 @@
 		}
 	?>
 
-		 <?php
-               if(isset($_SESSION['name'])){
-                    if($_SESSION['name'] != null){
-        ?>
-        <label id='helloLabel' >Hello 
-
-        <?php
-             echo $_SESSION['name'] ?>
-                 
-             </label>
-             <?php
-                    }
-               }
-                
-        ?>
 
 	</body>
 </html>

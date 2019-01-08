@@ -21,7 +21,7 @@
 			$Cardsale=$_POST['cardsale'];
 			$NOIe=$_POST['noi'];
 			$TotAmnt = 0;
-			echo "$Date";
+			
 
 			$sql = "SELECT UnitPrice FROM lubricantprice WHERE (LubricantId = '$LubricantId' AND UnitPricedDate = '$Date') ";
 			$result = $conn->query($sql);
@@ -31,7 +31,7 @@
     			// output data of each row
     			while($row = $result->fetch_assoc()) {
     				$Price = $row["UnitPrice"];
-    				echo "$Price";
+    				//calculate total amount (Amount = Unit price * No of Items - (debtor sales + card sales))
         			$TotAmnt = ($row["UnitPrice"] * $NOIe) - ($Debtorsale + $Cardsale);
     			}
 
@@ -56,21 +56,7 @@
 		}
 	?>
 
-		 <?php
-               if(isset($_SESSION['name'])){
-                    if($_SESSION['name'] != null){
-        ?>
-        <label id='helloLabel' >Hello 
-
-        <?php
-             echo $_SESSION['name'] ?>
-                 
-             </label>
-             <?php
-                    }
-               }
-                
-        ?>
+		 
 	</body>
 </html>
 

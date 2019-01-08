@@ -61,9 +61,12 @@
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 include "../../dbConnect/dbConnect.php";
                     $conn = dbConnect();
+
+                    // Assign user inputs to variable
                     $FromDate = $_POST['fromdate'];
                     $ToDate = $_POST['fromdate'];
                 
+                // validate user inputs
                 if (isset($FromDate) && isset($ToDate)) {
                     $sql = "SELECT LubricantId,Date,Cashsale,Debtorsale,Cardsale,NoOfItems,TotalAmount FROM lubricantsale WHERE Date BETWEEN '$FromDate' AND '$ToDate' ORDER BY Date DESC ";
                     $result = $conn->query($sql);
@@ -131,7 +134,7 @@
         <!-- Custom Theme JavaScript -->
         <script src="../../dist/js/sb-admin-2.js"></script>
 
-        <!-- pdf -->
+        <!-- download as pdf function-->
       <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
       <script type="text/javascript">
         $("#pdf").live("click", function () {

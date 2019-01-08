@@ -52,6 +52,7 @@
                                 <form width=70% action="viewstaff.php" method="post">
                                     <label for="fid">Employee ID</label><br>
                                     <select name="empid" id="empid">
+                                        <!-- populate values for user id action list -->
                                         <?php
                                             include "../../dbConnect/dbConnect.php";
                                             $count=0;
@@ -96,7 +97,7 @@
                                     
                                         if (isset($EmpId)) {
                                             echo '<div id="report">';
-
+                                            // Get All reports
                                             if ($EmpId == 'All') {
                                                 $sql = "SELECT NIC, EmpId, FirstName, LastName, DOB, Address, TelephoneNo, BasicSalary, Allowances, OTRate FROM pumper ";
                                             $result = $conn->query($sql);
@@ -134,7 +135,7 @@
                                             } 
                                             else {
                                                 $Tag = substr( $EmpId, 0, 3 );
-                                               
+                                               //Get Pumper reports
                                                 if (substr( $EmpId, 0, 4 ) === "PUMP") {
                                                     
                                                     $sql = "SELECT NIC, EmpId, FirstName, LastName, DOB, Address, TelephoneNo, BasicSalary, Allowances, OTRate FROM pumper WHERE EmpId = '$EmpId'";
@@ -228,6 +229,7 @@
             printWindow.print();
         });
     </script>
+
         <!-- Footer -->
         <?php include 'include/footer.php' ?>
 

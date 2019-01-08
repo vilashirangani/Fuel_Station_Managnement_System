@@ -124,7 +124,11 @@
                                                 echo "<tr><td>" . $row["NIC"]. "</td><td>" . $row["EmpId"]. "</td><td>" . $row["FirstName"]. " " . $row["LastName"]. "</td><td>" . $row["DOB"]. "</td><td>" . $row["Address"]. "</td><td>" . $row["TelephoneNo"]. "</td><td>" . $row["Email"]. "</td><td>" . $row["Type"]. "</td><td>" . $row["BasicSalary"]. "</td><td>" . $row["Allowances"]. "</td></tr>";
                                                 }
                                             echo "</table>";
+                                            } else {
+                                                echo "Err:". $conn->error;
                                             }
+                                            } else {
+                                                echo "Err:". $conn->error;
                                             }
                                             } 
                                             else {
@@ -136,9 +140,7 @@
                                             $result = $conn->query($sql);
                                             
                                             echo '<table class="blueTable"><caption>Pumper Details</caption><tr><th>NIC</th><th>PumperId</th><th>Name</th><th>DOB</th><th>Address</th><th>TelephoneNo</th><th>BasicSalary</th><th>Allowances</th><th>OTRate</th></tr>';
-                                            if (!$result) {
-                                                echo "Err:". $conn->error;
-                                            }
+                                            
 
                                             if ($result->num_rows > 0) {
                                                
@@ -148,6 +150,8 @@
                                                     echo "<tr><td>" . $row["NIC"]. "</td><td>" . $row["EmpId"]. "</td><td>" . $row["FirstName"]. " " . $row["LastName"]. "</td><td>" . $row["DOB"]. "</td><td>" . $row["Address"]. "</td><td>" . $row["TelephoneNo"]. "</td><td>" . $row["BasicSalary"]. "</td><td>" . $row["Allowances"]. "</td><td>" . $row["OTRate"]. "</td></tr>";
                                                 }
                                             echo "</table><br><br>";
+                                            } else {
+                                                echo "Err:". $conn->error;
                                             }
                                             } 
                                             else if ($Tag === "EMP") {
@@ -166,6 +170,8 @@
                                                 }
                                             echo "</table><br><br>";
 
+                                            } else {
+                                                echo "Err:". $conn->error;
                                             }
                                             
                                         }

@@ -88,7 +88,10 @@
     
 $conn -> close();
 ?>
-</select><br>
+</select><br><br>
+
+        <label for="fid">Quantity</label><br>
+    <input type="text" id="quantity" name="quantity" placeholder="Enter Quantity.." required><br>
       
        <label for="fid">Amount(Rs)</label><br>
     <input type="text" id="amount" name="amount" placeholder="Enter Amount(Rs).." required><br>
@@ -96,7 +99,7 @@ $conn -> close();
      <label for="fid">Invoice No</label><br>
     <input type="text" id="invoiceNo" name="invoiceNo" placeholder="Enter Invoice No.." required><br>
         
-       
+    
       <center><input type="submit" value="Submit"></center>
   <center>
   </form>

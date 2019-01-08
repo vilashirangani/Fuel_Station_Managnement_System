@@ -95,6 +95,7 @@
                                         $EmpId = $_POST['empid'];
                                     
                                         if (isset($EmpId)) {
+                                            echo '<div id="report">';
 
                                             if ($EmpId == 'All') {
                                                 $sql = "SELECT NIC, EmpId, FirstName, LastName, DOB, Address, TelephoneNo, BasicSalary, Allowances, OTRate FROM pumper ";
@@ -177,6 +178,8 @@
                                         }
                                         }
                                         }
+                                        echo '</div>';
+                                        echo '<br><br><input type="button" value="Download" id="pdf" class="btn btn-success"/>';
                                         $conn -> close();
                                     }
                                 ?>   
@@ -211,6 +214,20 @@
         <!-- Custom Theme JavaScript -->
         <script src="../../dist/js/sb-admin-2.js"></script>
 
+        <!-- pdf -->
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+      <script type="text/javascript">
+        $("#pdf").live("click", function () {
+            var divContents = $("#report").html();
+            var printWindow = window.open('', '', 'height=400,width=800');
+            printWindow.document.write('<html><head><title>Purchase Report</title>');
+            printWindow.document.write('</head><body >');
+            printWindow.document.write(divContents);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.print();
+        });
+    </script>
         <!-- Footer -->
         <?php include 'include/footer.php' ?>
 

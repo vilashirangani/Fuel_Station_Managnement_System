@@ -67,8 +67,9 @@
                 if (isset($FromDate) && isset($ToDate)) {
                     $sql = "SELECT LubricantId,Date,Cashsale,Debtorsale,Cardsale,NoOfItems,TotalAmount FROM lubricantsale WHERE Date BETWEEN '$FromDate' AND '$ToDate' ORDER BY Date DESC ";
                     $result = $conn->query($sql);
-                        
-                    echo '<table class="blueTable"><tr><th>Lubricant Id</th><th>Date</th><th>Cash Sales</th><th> Debtor Sales</th><th>Card Sales</th><th>Number of Items</th><th>Total Amount</th></tr>';
+                    
+                    echo '<div id="report">';
+                    echo '<table class="blueTable"><caption>Lubricant Sales Details</caption><tr><th>Lubricant Id</th><th>Date</th><th>Cash Sales</th><th> Debtor Sales</th><th>Card Sales</th><th>Number of Items</th><th>Total Amount</th></tr>';
 
                     if ($result->num_rows > 0) {
                         // output data of each row
@@ -83,7 +84,7 @@
                         $result = $conn->query($sql);
                         
 
-                        echo '<table class="blueTable"><tr><th>PumpId</th><th>Pumper Id</th><th>Date</th><th>Opening Meter Reading</th><th>Closing Meter Reading</th><th>Start Time</th><th>End Time</th><th>Total Amount</th><th>Debtor Sales</th><th>Card Sales</th><th>Cash To Be Recieved</th></tr>';
+                        echo '<table class="blueTable"><caption>Fuel Sales Details</caption><tr><th>PumpId</th><th>Pumper Id</th><th>Date</th><th>Opening Meter Reading</th><th>Closing Meter Reading</th><th>Start Time</th><th>End Time</th><th>Total Amount</th><th>Debtor Sales</th><th>Card Sales</th><th>Cash To Be Recieved</th></tr>';
 
                     if ($result->num_rows > 0) {
                         // output data of each row
@@ -91,6 +92,8 @@
                             echo "<tr><td>" . $row["PumpId"]. "</td><td>" . $row["PumperId"]. "</td><td>" . $row["Date"]. "</td><td>" . $row["OMReading"]. "</td><td>" . $row["CMReading"]. "</td><td>". $row["Stime"]. "</td><td>" . $row["Etime"]. "</td><td>" . $row["TotalAmount"]. "</td><td>" . $row["DebtorSales"]. "</td><td>" . $row["CardSales"]. "</td><td>" . $row["ToBeRecieved"]. "</td></tr>";
                         }
                     echo "</table><br><br>";
+                    echo "</div>";
+                    echo '<input type="button" value="Download" id="pdf" class="btn btn-success"/>';
                     }
                 }
 
@@ -128,6 +131,20 @@
         <!-- Custom Theme JavaScript -->
         <script src="../../dist/js/sb-admin-2.js"></script>
 
+        <!-- pdf -->
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+      <script type="text/javascript">
+        $("#pdf").live("click", function () {
+            var divContents = $("#report").html();
+            var printWindow = window.open('', '', 'height=400,width=800');
+            printWindow.document.write('<html><head><title>Purchase Report</title>');
+            printWindow.document.write('</head><body >');
+            printWindow.document.write(divContents);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.print();
+        });
+    </script>
         <!-- Footer -->
         <?php include 'include/footer.php' ?>
 

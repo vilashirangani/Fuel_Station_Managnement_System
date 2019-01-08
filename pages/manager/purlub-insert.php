@@ -22,9 +22,10 @@
 			$Date=$_POST['date'];
 			$Amount=$_POST['amount'];
 			$InvoiceNo=$_POST['invoiceNo'];
+			$Quantity=$POST['quantity'];
 			
 
-			$sql = "INSERT INTO lubricantpurchase(LubricantId, Date,Amount, InvoiceNo) VALUES ('$LubId', '$Date', '$Amount','$InvoiceNo')";
+			$sql = "INSERT INTO lubricantpurchase(LubricantId, Date,Amount, InvoiceNo, Quantity) VALUES ('$LubId', '$Date', '$Amount','$InvoiceNo','$Quantity')";
 			
 			
 				if ($conn->query($sql) === TRUE) {
